@@ -45,9 +45,9 @@ func App() *buffalo.App {
 
 		// Automatically redirect to SSL
 		app.Use(forceSSL())
-	
+
 		// Adding the db transations Middleware
-		 app.Use(popmw.Transaction(models.DB))
+		app.Use(popmw.Transaction(models.DB))
 
 		// Log request parameters (filters apply).
 		app.Use(paramlogger.ParameterLogger)
@@ -61,6 +61,7 @@ func App() *buffalo.App {
 		app.Use(popmw.Transaction(models.DB))
 
 		app.GET("/", HomeHandler)
+		app.Resource("/users", UsersResource{})
 	}
 
 	return app
