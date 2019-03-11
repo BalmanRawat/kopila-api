@@ -1,0 +1,18 @@
+version: "3.5"
+# volumes:
+#   prometheus_data: {}
+#   grafana_data: {}
+
+# networks:
+#   default:
+#     external:
+#       name: prometheus # docker network create --subnet=172.21.0.0/16 --gateway=172.21.0.1 prometheus                                         
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ~/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD
+    ports:
+      - 5432:5432
