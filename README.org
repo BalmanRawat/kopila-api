@@ -1,11 +1,42 @@
 #+TITLE: Kopila Api Org
 #+DATE: Thu Mar 14
+* Kopila API
+Here are the lists of API that are exposed by this api backed. Document is categorized based on the REST API request type
 
-* Kopila API /users 
-  #+BEGIN_SRC shell :results value scalar :exports both
+** GET
+*** /users 
+  #+BEGIN_SRC shell :results value code :exports both
   curl -X GET http://localhost:3000/users
   #+END_SRC
 
   #+RESULTS:
-  : [{"id":"d2bd95dc-1e9c-4f0e-b295-d833ff6ca6fa","created_at":"2019-03-11T22:57:35.880337Z","updated_at":"2019-03-11T22:57:35.880338Z","name":"Balman Rawat","phone_number":"9840052692","tole":"chyasal","ward":"5"},{"id":"f240d31d-2e84-43d5-8657-d93d2cfb5950","created_at":"2019-03-12T22:45:30.536927Z","updated_at":"2019-03-12T22:45:30.536928Z","name":"bhoj solti","phone_number":"","tole":"daunga","ward":"6"},{"id":"c89924d8-2ad3-46db-8541-fcfd6898a5ea","created_at":"2019-03-12T22:49:46.298576Z","updated_at":"2019-03-12T22:49:46.298577Z","name":"भोज बहादुर राना","phone_number":"9840052913","tole":"दौंघा","ward":"६"}]
-
+  #+BEGIN_SRC js
+[{
+   "id":"d2bd95dc-1e9c-4f0e-b295-d833ff6ca6fa",
+   "created_at":"2019-03-11T22:57:35.880337Z",
+   "updated_at":"2019-03-11T22:57:35.880338Z",
+   "name":"Balman Rawat",
+   "phone_number":"9840052692",
+   "tole":"chyasal",
+   "ward":"5"
+ },
+ {
+    "id":"f240d31d-2e84-43d5-8657-d93d2cfb5950",
+    "created_at":"2019-03-12T22:45:30.536927Z",
+    "updated_at":"2019-03-12T22:45:30.536928Z",
+    "name":"bhoj solti",
+    "phone_number":"",
+    "tole":"daunga",
+    "ward":"6"
+  },
+  {
+    "id":"c89924d8-2ad3-46db-8541-fcfd6898a5ea",
+    "created_at":"2019-03-12T22:49:46.298576Z",
+    "updated_at":"2019-03-12T22:49:46.298577Z",
+    "name":"भोज बहादुर राना",
+    "phone_number":"9840052913",
+    "tole":"दौंघा",
+    "ward":"६"
+    }
+]
+#+END_SRC
