@@ -6,7 +6,7 @@ Here are the lists of API that are exposed by this api backed. Document is categ
 ** GET
 *** /users 
   #+BEGIN_SRC shell :results value code :exports both
-  curl -X GET http://localhost:3000/users
+  curl -X GET https://kopilaapi.org/users
   #+END_SRC
 
   #+RESULTS:
@@ -40,3 +40,21 @@ Here are the lists of API that are exposed by this api backed. Document is categ
     }
 ]
 #+END_SRC
+
+** /tole/tole-id
+   #+BEGIN_SRC shell
+   curl -X https://kopilaapi.org/tole/daunga
+   #+END_SRC
+
+   #+RESULTS:
+   #+BEGIN_SRC js
+   [{
+      "id":"c89924d8-2ad3-46db-8541-fcfd6898a5ea",
+      "created_at":"2019-03-12T22:49:46.298576Z",
+      "updated_at":"2019-03-12T22:49:46.298577Z",
+      "name":"भोज बहादुर राना",
+      "phone_number":"9840052913",
+      "tole":"दौंघा",
+      "ward":"६"
+    }]
+    #+END_SRC 
