@@ -12,6 +12,8 @@ import (
 	contenttype "github.com/gobuffalo/mw-contenttype"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/rs/cors"
+	"net/http/httputil"
+	"log"
 )
 
 // ENV is used to help switch settings based on where the
@@ -50,7 +52,10 @@ func App() *buffalo.App {
 		app.Use(popmw.Transaction(models.DB))
 
 		// Log request parameters (filters apply).
-		app.Use(paramlogger.ParameterLogger)
+		if ENV == "development" {
+			app.Use(paramlogger.ParameterLogger)
+			app.Use(DumpHTTPRequest)
+		}
 
 		// Set the request content type to JSON
 		app.Use(contenttype.Set("application/json"))
@@ -77,4 +82,21 @@ func forceSSL() buffalo.MiddlewareFunc {
 		SSLRedirect:     ENV == "production",
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})
+}
+
+// dump http headers for a request
+func DumpHTTPRequest(next buffalo.Handler) buffalo.Handler {
+
+	return func(c buffalo.Context) error {
+		// Do stuff here
+		log.Println()
+		log.Println("..............")
+		req := c.Request()
+		requestDump, err := httputil.DumpRequest(req, true)
+		if err != nil {
+			log.Println(err)
+		}
+		log.Println(string(requestDump))
+		return next(c)
+	}
 }
