@@ -41,9 +41,9 @@ Here are the lists of API that are exposed by this api backed. Document is categ
 ]
 #+END_SRC
 
-** /tole/tole-id 
+*** /tole/tole-id 
    #+BEGIN_SRC shell :results value code :exports both
-   curl -X https://kopilaapi.org/tole/daunga
+   curl -X GET https://kopilaapi.org/tole/33
    #+END_SRC
 
    #+RESULTS:
