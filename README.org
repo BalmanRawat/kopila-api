@@ -2,7 +2,7 @@
 #+DATE: Thu Mar 14
 
 * Kopila API /users 
-  #+BEGIN_SRC shell :results value scalar
+  #+BEGIN_SRC shell :results value scalar :exports both
   curl -X GET http://localhost:3000/users
   #+END_SRC
 
