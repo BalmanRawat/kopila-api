@@ -1,7 +1,7 @@
 package grifts
 
 import (
-	"github.com/balmanrawat/kopila_api/actions"
+	"github.com/balmanrawat/kopila-api/actions"
 	"github.com/gobuffalo/buffalo"
 )
 

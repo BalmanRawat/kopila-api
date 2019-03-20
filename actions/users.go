@@ -1,7 +1,7 @@
 package actions
 
 import (
-	"github.com/balmanrawat/kopila_api/models"
+	"github.com/balmanrawat/kopila-api/models"
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop"
 	"github.com/pkg/errors"

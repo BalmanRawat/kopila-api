@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/balmanrawat/kopila_api/actions"
+	"github.com/balmanrawat/kopila-api/actions"
 )
 
 // main is the starting point for your Buffalo application.
