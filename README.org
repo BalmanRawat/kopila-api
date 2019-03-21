@@ -3,6 +3,8 @@
 * Kopila API
 Here are the lists of API that are exposed by this api backed. Document is categorized based on the REST API request type
 
+**** APPURL: https://kopila-api.herokuapp.com/
+
 ** GET
 *** /users 
   #+BEGIN_SRC shell :results value code :exports both
