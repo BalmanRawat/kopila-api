@@ -8,7 +8,8 @@ Here are the lists of API that are exposed by this api backed. Document is categ
 ** GET
 *** /users 
   #+BEGIN_SRC shell :results value code :exports both
-  curl -X GET https://kopilaapi.org/users
+  # By default pagination returns 20 items at a time
+  curl -X GET https://kopilaapi.org/users?page=1
   #+END_SRC
 
   #+RESULTS:
