@@ -16,10 +16,17 @@ var _ = grift.Namespace("db", func() {
 	grift.Desc("seed", "Seeds a database")
 	grift.Add("seed", func(c *grift.Context) error {
 		// Add DB seeding stuff here
+
+		err := models.DB.TruncateAll()
+		if err != nil {
+			log.Fatal(err)
+			return nil
+		}
 		
 		csvFile, err := os.Open("grifts/data.csv")
 		if err != nil {
 			log.Fatal(err)
+			return nil
 		}
 		
 		reader := csv.NewReader(bufio.NewReader(csvFile))
