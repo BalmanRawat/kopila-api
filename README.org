@@ -9,7 +9,7 @@ Here are the lists of API that are exposed by this api backed. Document is categ
 *** /users 
   #+BEGIN_SRC shell :results value code :exports both
   # By default pagination returns 20 items at a time
-  curl -X GET https://kopilaapi.org/users?page=1
+  curl -X GET https://kopila-api.herokuapp.com/?page=1
   #+END_SRC
 
   #+RESULTS:
@@ -46,7 +46,8 @@ Here are the lists of API that are exposed by this api backed. Document is categ
 
 *** /tole/tole-id 
    #+BEGIN_SRC shell :results value code :exports both
-   curl -X GET https://kopilaapi.org/tole/33
+   # STILL NOT READY NOW
+   curl -X GET https://kopila-api.herokuapp.com/tole="daunga"?page=1
    #+END_SRC
 
    #+RESULTS:
