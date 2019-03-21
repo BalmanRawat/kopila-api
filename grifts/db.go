@@ -5,6 +5,7 @@ import (
 	"github.com/balmanrawat/kopila-api/models"
 	"bufio"
 	"encoding/csv"
+	"path/filepath"
 	"fmt"
 	"io"
 	"log"
@@ -22,8 +23,9 @@ var _ = grift.Namespace("db", func() {
 			log.Fatal(err)
 			return nil
 		}
-		
-		csvFile, err := os.Open("grifts/data.csv")
+	
+		absPath, _ := filepath.Abs("./data.csv")
+		csvFile, err := os.Open(absPath)
 		if err != nil {
 			log.Fatal(err)
 			return nil
